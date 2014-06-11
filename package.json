@@ -1,0 +1,43 @@
+{
+  "name": "grunt-bgmust",
+  "description": "image in css must",
+  "version": "0.1.0",
+  "homepage": "https://github.com/derrickliu/grunt-bgmust",
+  "author": {
+    "name": "derrickliu",
+    "email": "liulinpeng@gmail.com",
+    "url": "https://github.com/derrickliu"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/derrickliu/grunt-bgmust.git"
+  },
+  "bugs": {
+    "url": "https://github.com/derrickliu/grunt-bgmust/issues"
+  },
+  "licenses": [
+    {
+      "type": "MIT",
+      "url": "https://github.com/derrickliu/grunt-bgmust/blob/master/LICENSE-MIT"
+    }
+  ],
+  "engines": {
+    "node": ">= 0.8.0"
+  },
+  "scripts": {
+    "test": "grunt test"
+  },
+  "devDependencies": {
+    "grunt-contrib-cssmin": "~0.9.0",
+    "grunt-contrib-clean": "^0.5.0",
+    "grunt-rev": "~0.1.0",
+    "grunt-contrib-copy": "~0.5.0",
+    "grunt": "~0.4.5"
+  },
+  "peerDependencies": {
+    "grunt": "~0.4.5"
+  },
+  "keywords": [
+    "gruntplugin"
+  ]
+}
