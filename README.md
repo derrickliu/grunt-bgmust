@@ -37,17 +37,11 @@ grunt.initConfig({
 
 ### Options
 
-#### options.separator
+#### options.images
 Type: `String`
 Default value: `',  '`
 
-A string value that is used to do something with whatever.
-
-#### options.punctuation
-Type: `String`
-Default value: `'.'`
-
-A string value that is used to do something else with whatever else.
+需要匹配的图片文件夹.
 
 ### Usage Examples
 
@@ -57,10 +51,16 @@ In this example, the default options are used to do something with whatever. So 
 ```js
 grunt.initConfig({
   bgmust: {
-    options: {},
-    files: {
-      'dest/default_options': ['src/testing', 'src/123'],
-    },
+    module: {
+        options: {
+          images: 'release/css/images/'
+        },
+        files: [
+          {
+            src: 'release/css/module.css'
+          }
+        ]
+      }
   },
 });
 ```
@@ -70,15 +70,45 @@ In this example, custom options are used to do something else with whatever else
 
 ```js
 grunt.initConfig({
-  bgmust: {
-    options: {
-      separator: ': ',
-      punctuation: ' !!!',
-    },
+  cssmin: {
+     options: {
+         keepSpecialComments: 0
+     },
+     compress: {
+         files: {
+             'release/css/contact.css': 'src/css/contact.css'
+         }
+     }
+ },
+ bgmust: {
+    contact: {
+      options: {
+        images: 'release/css/images/'
+      },
+      files: [
+        {
+          src: 'release/css/contact.css'
+        }
+      ]
+    }
+ },
+
+ /////////////////////////////
+ clean: ['release/css/images/'],
+ copy: {
+    main: {
+        expand: true,
+        cwd: 'src/css/images/',
+        src: ['**'],
+        dest: 'release/css/images/',
+    }
+ },
+
+ rev: {
     files: {
-      'dest/default_options': ['src/testing', 'src/123'],
-    },
-  },
+        src: ['release/css/images/**/*.{png,jpg,gif}']
+    }
+ }
 });
 ```
 
