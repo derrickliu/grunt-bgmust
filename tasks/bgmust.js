@@ -49,7 +49,7 @@ module.exports = function(grunt) {
       });
 
       // Print a success message.
-      grunt.log.writeln('File "' + f.src + '" created.');
+      grunt.log.writeln('File "' + f.src + '" replaced.');
     });
   });
 
